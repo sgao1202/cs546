@@ -10,9 +10,9 @@ function checkArray(array) {
 function mean(array) {
     checkArray(array);  
     const sum = (accum, n) => {
-        accum + n;
+        return accum + n;
     };
-    return array.reduce(sum) / array.length;
+    return Math.round(array.reduce(sum) * 100 / array.length) / 100;
 }
 
 function medianSquared(array) {
@@ -82,20 +82,46 @@ function countRepeating(array) {
     return counts;
 }
 
+function compare(a, b) {
+    if (typeof a != typeof b) {
+        if (typeof a == 'string' && typeof b == 'number') return 1;
+        if (typeof a == 'string' && typeof b == 'boolean') return 1;
+        if (typeof a == 'string' && typeof b == 'object') return -1;
+
+        if (typeof a == 'number' && typeof b == 'string') return -1;
+        if (typeof a == 'number' && typeof b == 'boolean') return -1;
+        if (typeof a == 'number' && typeof b == 'object') return -1;
+        
+        if (typeof a == 'boolean' && typeof b == 'number') return 1;
+        if (typeof a == 'boolean' && typeof b == 'string') return -1
+        if (typeof a == 'boolean' && typeof b == 'object') return -1
+
+        if (typeof a == 'object' && typeof b == 'number') return 1;
+        if (typeof a == 'object' && typeof b == 'string') return 1;
+        if (typeof a == 'object' && typeof b == 'boolean') return 1;
+    } else {
+        if (a > b) return -1;
+        if (a < b) return 1;
+        return 0;
+    }
+}
+
 function arrayEqual(arr1, arr2) {
+    if (arr1.length == 0 && arr2.length == 0) return true;
     if (arr1.length != arr2.length) return false;
-    arr1.sort();
-    arr2.sort();
+    arr1.sort(compare);
+    arr2.sort(compare);
     for (let i = 0; i < arr1.length; i++) {
         if (Array.isArray(arr1[i]) && Array.isArray(arr2[i])) {
-            console.log("reached here");
-            arrayEqual(arr1[i], arr2[i]);
+            //return arrayEqual(arr1[i], arr2[i]) && arrayEqual(arr1.slice(1, arr1.length), arr2.slice(1, arr2.length));
+            if (!arrayEqual(arr1[i], arr2[i])) return false;
         } else if ((!Array.isArray(arr1[i]) && Array.isArray(arr2[i])) || (Array.isArray(arr1[i]) && !Array.isArray(arr2[i])) || (arr1[i] !== arr2[i])) {
             return false;
         }
     }
     return true;
 }
+
 function isEqual(arrayOne, arrayTwo) {
     checkArray2(arrayOne, "arrayOne");
     checkArray2(arrayTwo, "arrayTwo");
@@ -110,48 +136,3 @@ module.exports = {
     countRepeating,
     isEqual
 };
-
-console.log(medianSquared([1, 2, 4]));     // 4
-console.log(medianSquared([1,2]));
-console.log(medianSquared([1,3]));
-console.log(medianSquared([1, 3, 4, 5]));     // 16
-console.log(medianSquared([1, 2, 3, 5, 6, 7]));
-console.log(medianSquared([1,5,4,6,7,3,4]));       //[1, 3, 4, 4, 5, 6, 7]
-console.log(medianSquared([1]));
-console.log();
-
-console.log(maxElement([5, 6, 7])); // Returns: {'7': 2}
-console.log(maxElement([5,1,3,2]));
-console.log(maxElement([5,1,3,2,10]));
-console.log(maxElement([5,1,15, 3,2, 15]));
-console.log();
-
-console.log(fill(1)); // Returns: [0, 1, 2, 3, 4, 5]
-console.log(fill(6)); // Returns: [0, 1, 2, 3, 4, 5]
-console.log(fill(3, 'Welcome')); // Returns: ['Welcome', 'Welcome', 'Welcome']
-console.log();
-/*
-fill(); // Throws error
-fill("test"); // Throws error
-fill(0); // Throws Error
-fill(-4); // Throws Error
-*/
-
-console.log(countRepeating([7, '7', 13, true, true, true, "Hello","Hello", "hello"]));
-console.log(countRepeating([13, 7, '7', true, true, "Hello", "hello", true, 'Hello']));
-console.log(countRepeating([7, '7', 13, true, true, true, "Hello","Hello", "hello", "hello"]));
-console.log(countRepeating([7, '7', 13, true, true, true, "Hello","Hello", "hello", "hello", "hi"]));
-console.log(countRepeating([7, '7', 13, true, true, true, "Hello","Hello", "hello", "hello", "hi", 'hi']));
-console.log();
-
-console.log(isEqual([1, 2, 3], [3, 1, 2])); // Returns: true
-console.log(isEqual([ 'Z', 'R', 'B', 'C', 'A' ], ['R', 'B', 'C', 'A', 'Z'])); // Returns: true
-console.log(isEqual([1, 2, 3], [4, 5, 6])); // Returns: false
-console.log(isEqual([1, 3, 2], [1, 2, 3, 4])); // Returns: false
-console.log(isEqual([1, 2], [1, 2, 3])); // Returns: false
-console.log();
-
-console.log(isEqual([[ 1, 2, 3 ], [ 4, 5, 6 ], [ 7, 8, 9 ]], [[ 3, 1, 2 ], [ 5, 4, 6 ], [ 9, 7, 8 ]])); // Returns: true
-console.log(isEqual([[ 1, 2, 3 ], [ 4, 5, 6 ], [ 7, 8, 9 ]], [[ 3, 1, 2 ], [ 5, 4, 11 ], [ 9, 7, 8 ]])); // Returns: false
-console.log(isEqual([ 1, 2, 3 ], [ 3, 1, 2]));      // Returns true
-console.log(isEqual([[ 1, 2, 3 ], [ 4, 5, 6 ]], [[ 3, 1, 2 ], [ 5, 4, 11 ]]));      //Returns false
