@@ -47,6 +47,7 @@ function checkArray2(array, variableName="Provided argument") {
 function fill(end, value) {
     if (end == null) throw 'End argument is required.';
     if (typeof end != 'number') throw 'End argument provided is not a number.';
+    if (!Number.isInteger(end)) throw 'End argument must be an integer';
     if (end <= 0) throw 'End argument provided cannot be less than or equal to 0.';
 
     const arr = [];
