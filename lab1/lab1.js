@@ -41,7 +41,7 @@ const questionThree = function questionThree(text) {
         vowels: 0,
         numbers: 0,
         spaces: 0, 
-        punctuations: 0,
+        punctuation: 0,
         specialCharacters: 0
     };
 
@@ -63,7 +63,7 @@ const questionThree = function questionThree(text) {
         } else if (numbers.includes(lowerChar)) {
             results.numbers += 1;
         } else if (punctuations.includes(lowerChar)) {
-            results.punctuations += 1;
+            results.punctuation += 1;
         } else {
             results.specialCharacters += 1;
         }
