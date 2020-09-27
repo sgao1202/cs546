@@ -14,7 +14,7 @@
 //     throw 25;
 // }
 
-const weather = false;
+const weather = true;
 async function date() {
     if (weather) {
         const dateDetails = {
@@ -44,3 +44,4 @@ async function myDate() {
 }
 
 myDate();
+console.log("hello world");

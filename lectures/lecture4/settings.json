@@ -1,0 +1,6 @@
+{
+    "mongoConfig": {
+        "serverURL": "=-'0",
+        "database": "dogsWithBlogs"
+    }
+}
