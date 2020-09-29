@@ -1,6 +1,6 @@
 {
     "mongoConfig": {
-        "serverURL": "=-'0",
+        "serverURL": "mongodb://localhost:27017",
         "database": "dogsWithBlogs"
     }
 }
