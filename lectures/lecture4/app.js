@@ -61,7 +61,7 @@ const main = async() => {
     const db = await connection();
     await db.serverConfig.close();
   
-    console.log('Done!');
+    console.log('Done!');  
 };
 
 main().catch((error) => {
