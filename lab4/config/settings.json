@@ -1,6 +1,0 @@
-{
-    "mongoConfig": {
-        "serverURL": "mongodb://localhost:27017",
-        "database": "Simon_Gao_lab4"
-    }
-}
