@@ -1,0 +1,15 @@
+{
+  "name": "cs-546-lab-3",
+  "version": "1.0.0",
+  "description": "Lab 3 for CS 546-Web Programming",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Simon Gao 10439402",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.20.0"
+  }
+}
