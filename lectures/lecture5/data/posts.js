@@ -25,8 +25,7 @@ let exportedMethods = {
       poster: {
         id: posterId,
         name: `${userThatPosted.firstName} ${userThatPosted.lastName}`
-      },
-      _id: uuid.v4()
+      }
     };
 
     const newInsertInformation = await postCollection.insertOne(newPost);

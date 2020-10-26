@@ -4,8 +4,8 @@ const movies = mongoCollections.movies;
 let { ObjectId } = require('mongodb');
 
 function validString(str) {
-    if (!str || typeof str != 'string' || !str.trim()) return false;
-    return true;
+        if (!str || typeof str != 'string' || !str.trim()) return false;
+        return true;
 }
 
 // Takes in a movie object and converts _id to a string
