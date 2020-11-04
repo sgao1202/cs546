@@ -1,0 +1,10 @@
+<h1>{{title}}</h1>
+<p id="description">
+    This website application is a front end to access the TV Maze web API. 
+    You can search for shows below by entering search keywords and clicking the search button.
+</p>
+<form method="POST" action="/search" id="search-form">
+    <label for="search-box" id="search-label">Enter search term:</label>
+    <input type="text" name="searchTerm" id="search-box">
+    <button type="submit" id="search-btn">Search</button>
+</form>

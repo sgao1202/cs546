@@ -1,0 +1,26 @@
+<div id="container">
+    <h1>{{title}}</h1>
+    <img src="{{image.medium}}" alt="show_image" id="show-image">
+    <dl>
+        <dt>Language</dt>
+        <dd>{{language}}</dd>
+
+        <dt>Genres</dt>
+        <dd>
+            <ul>
+                {{#each genres}}
+                    <li>{{this}}</li>
+                {{/each}}
+            </ul>
+        </dd>
+
+        <dt>Average Rating</dt>
+        <dd>{{averageRating}}</dd>
+
+        <dt>Network</dt>
+        <dd>{{network}}</dd>
+
+        <dt>Summary</dt>
+        <dd>{{summary}}</dd>
+    </dl>
+</div>
