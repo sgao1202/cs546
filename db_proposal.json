@@ -1,0 +1,60 @@
+{
+    "Restaurant": 
+    {
+        "_id": "7b7997a2-c0d2-4f8c-b27a-6a1d4b6c9283",
+        "name": "Bobs Burgers",
+        "address": "123 Washington St",
+        "cuisine": "American",
+        "rating": 2.3,
+        "distancedTablesPerc": 88,
+        "maskedEmployeesPerc": 12,
+        "noTouchPayment": 100,
+        "outdoorSeating": 0,
+        "reviews": [
+            "7b7997a2-c0d2-4f8c-b27a-6a1d4e9b7832",
+            "7b7997a2-c0d2-4f8c-b27a-6a1d4e9c0234"
+        ]
+    },
+    "User": 
+    {
+        "_id": "7e7997a2-c0d2-4f8c-b27a-6a1d4b5b6310",
+        "firstName": "Henry",
+        "lastName": "Pon",
+        "email": "hpone24@gmail.com",
+        "username": "henry24",
+        "age": 25,
+        "hashed-password": "$2a$08$XdvNkfdNIL8F8xsuIUeSbNOFgK0M0iV5HOskfVn7.PWncShU.O",
+        "favoritedRestaurants": [],
+        "reviews":["7b7997a2-c0d2-4f8c-b27a-6a1d4b5b6310", "7b7997a2-c0d2-4f8c-b27a-6a1d4b5b6311"],
+        "comments": ["9a2987a7-c2e6-5g8c-b27a-6a1d4b5b7310"]
+    },
+
+    "Comment": 
+    {
+        "_id": "7e7997a2-c0d2-4f8c-b27a-6a1d4b5b6310",
+        "reviewId": "7e7997a2-c0d2-4f8c-b27a-6a1d4b5c7350",
+        "userId": "7e7997a2-c0d2-4f8c-b27a-6a1d4b5f1680",
+        "text": "I agree, I love this restaurant!"
+    },
+
+    "Reviews":
+    {
+        "_id": "7b7997a2-c0d2-4f8c-b27a-6a1d4b6c9283",
+        "reviewerId": "7b7997a2-c0d2-4f8c-b27a-6a1d4e9b7832",
+        "restaurantId": "7b7997a2-c0d2-4f8c-b27a-6a1d4e9c0234",
+        "reviewText": "This restaurant stinks!",
+        "rating": 2,
+        "metrics": {
+            "distancedTables": false,
+            "maskedEmployees": false,
+            "noTouchPayment": true,
+            "outdoorSeating": true
+        },
+        "comments": ["7e7997a2-c0d2-4f8c-b27a-6a1d4b5b6310",
+            "7e7997a2-c0d2-4f8c-b27a-6a1d4b7c2564"
+        ],
+        "likes": [  "7e7997a2-c0d2-4f8c-b27a-6a1d4b5e7615", 
+                    "7e7997a2-c0d2-4f8c-b27a-6a1d4b5b6311"],
+        "dislikes": ["7e7997a2-c0d2-4f8c-b27a-6a1d4b5b6310"]
+    }
+}

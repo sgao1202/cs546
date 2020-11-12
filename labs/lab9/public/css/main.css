@@ -1,0 +1,48 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#fib-container {
+    padding: 10px;
+}
+
+#footer-container {
+    border-top: 2px solid grey;
+}
+
+.is-prime {
+    color:#00E676;
+}
+
+.not-prime {
+    color: #FF3D00;
+}
+
+#error-container {
+    font-size: 12px;
+    color: lightcoral;
+    padding: 5px;
+}
+
+#footer-info {
+    font-style: italic;
+}
+
+#number-input, #submit-button{
+    padding: 0.7em 1.7em;
+    border-radius: 0.25em;
+}
+
+#submit-button {
+    box-sizing: border-box;
+    background-color: dodgerblue;
+    color: #ffffff;
+}
+
+.list-item {
+    margin: 7px 7px;
+}
+
+.results-active{
+    border: 2px solid lightslategray;
+}

@@ -1,0 +1,17 @@
+.myClassOne {
+	color: red;
+}
+
+.myClassTwo {
+	color: blue;
+}
+
+.error {
+	color: red;
+	font-weight: bold;
+}
+
+.blackText {
+	color: black;
+	font-weight: normal;
+}
