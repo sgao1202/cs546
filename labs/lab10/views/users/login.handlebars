@@ -1,0 +1,18 @@
+<form method="POST" action="/login" id="login-form">
+    <div id="error-container">
+        {{errorMessage}}
+    </div>
+    <div class="input-container">
+        <label>
+            Username:
+            <input type="text" name="username" id="username">
+        </label>
+    </div>
+    <div class="input-container">
+        <label> 
+            Password:
+            <input type="password" name="password" id="password">
+        </label>
+    </div>
+    <button type='submit' id="login-btn">Login</button>
+</form>
