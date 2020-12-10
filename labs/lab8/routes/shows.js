@@ -6,7 +6,7 @@ const showData = data.shows;
 router.get('/:id', async (req, res) => {
     let id = req.params.id;
     if (!id) {
-
+        
     }
     try {
         const show = await showData.getShowById(id);
